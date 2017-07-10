@@ -12,13 +12,13 @@ function athletesService ($http) {
   };
 
   service.getAthlete = function (id) {
-    return $http.get("/athlete" + id).then(res => {
+    return $http.get("/athletes/" + id).then(res => {
       return res.data;
     });
   };
 
   service.saveAthlete = function (newAthlete) {
-    return $http.post("/athlete", newAthlete).then(res => {
+    return $http.post("/athletes", newAthlete).then(res => {
       return res.data;
     });
   };

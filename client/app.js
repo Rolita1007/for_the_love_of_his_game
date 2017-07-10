@@ -7,16 +7,20 @@ router.$inject = ["$stateProvider", "$urlRouterProvider"];
 
 function router ($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state("home", {
+    .state("welcome", {
       url: "/",
+      template: "<welcome></welcome>"
+    })
+    .state("athletes", {
+      url: "/athletes",
       template: "<athletes></athletes>"
     })
-    .state("athlete", {
-      url: "/athlete/:id",
+    .state("showAthlete", {
+      url: "/athletes/:id",
       template: "<show-athlete></show-athlete>"
     })
     .state("newAthlete", {
-      url: "/athlete.new",
+      url: "/athletes/new",
       template: "<new-athlete></new-athlete>"
     });
 

@@ -8,7 +8,8 @@ function NewAthleteController($stateParams, $http, athletesService, $state) {
     athletesService.saveAthlete(vm.athlete)
     .then(function(res) {
       console.log(res);
-      $state.go("home");
+      // $state.go("welcome");
+      $state.go("showAthlete", {id: res.athlete.id})
     });
 
   };

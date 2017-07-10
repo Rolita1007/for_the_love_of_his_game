@@ -9,7 +9,9 @@ def create
   @athlete = Athlete.new(athlete_params)
 
   if @athlete.save
-    redirect_to athlete_path(@athlete)
+    render json: {
+      athlete: @athlete
+    }
   else
     render status: 500,
            json: {
