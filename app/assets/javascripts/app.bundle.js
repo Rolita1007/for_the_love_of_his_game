@@ -8865,25 +8865,10 @@ exports.default = AthletesController;
 
 /***/ }),
 /* 61 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-// WelcomeController.$inject = ["welcomeService"];
-
-function WelcomeController() {
-  var vm = this;
-
-  activate();
-
-  function activate() {}
-}
-
-exports.default = WelcomeController;
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/la_colombiana/GA/for_the_love_of_his_game/client/components/welcome/welcome.controller.js'");
 
 /***/ }),
 /* 62 */
@@ -45165,33 +45150,10 @@ angular.module("forTheLoveOfHisGame").service("athletesService", athletesService
 
 /***/ }),
 /* 101 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _welcome = __webpack_require__(61);
-
-var _welcome2 = _interopRequireDefault(_welcome);
-
-var _welcome3 = __webpack_require__(102);
-
-var _welcome4 = _interopRequireDefault(_welcome3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var welcomeComponent = {
-  controller: _welcome2.default,
-  template: _welcome4.default
-};
-
-angular.module("forTheLoveOfHisGame").component("welcome", welcomeComponent);
-
-/***/ }),
-/* 102 */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"home-view-container\">\n    <div class=\"container\">\n        <div class=\"index-header\">\n            <h1 class=\"home-header\">For the love of his game</h1>\n            <img src=\"http://maxpreps.cbsistatic.com/includes/images/sport_icons/football.jpg\">\n            <p>Bringing the love of football with families around the world </p>\n            <p>\n                <a class=\"btn btn-primary btn-lg\" href=\"/athletes\"></a>\n            </p>\n        </div>\n    </div>\n</div>\n";
+"use strict";
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/la_colombiana/GA/for_the_love_of_his_game/client/components/welcome/welcome.component.js'");
 
 /***/ })
 /******/ ]);
