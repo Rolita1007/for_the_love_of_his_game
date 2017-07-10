@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 61);
+/******/ 	return __webpack_require__(__webpack_require__.s = 62);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1052,17 +1052,17 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(16));
-__export(__webpack_require__(65));
 __export(__webpack_require__(66));
 __export(__webpack_require__(67));
 __export(__webpack_require__(68));
-__export(__webpack_require__(78));
+__export(__webpack_require__(69));
 __export(__webpack_require__(79));
 __export(__webpack_require__(80));
+__export(__webpack_require__(81));
 __export(__webpack_require__(45));
 __export(__webpack_require__(40));
-__export(__webpack_require__(81));
-__export(__webpack_require__(84));
+__export(__webpack_require__(82));
+__export(__webpack_require__(85));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -2368,7 +2368,7 @@ exports.locationPluginFactory = locationPluginFactory;
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(63);
+__webpack_require__(64);
 module.exports = angular;
 
 
@@ -4640,21 +4640,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var interface_1 = __webpack_require__(8);
 var transition_1 = __webpack_require__(18);
 var hookRegistry_1 = __webpack_require__(25);
-var coreResolvables_1 = __webpack_require__(69);
-var redirectTo_1 = __webpack_require__(70);
-var onEnterExitRetain_1 = __webpack_require__(71);
-var resolve_1 = __webpack_require__(72);
-var views_1 = __webpack_require__(73);
-var updateGlobals_1 = __webpack_require__(74);
-var url_1 = __webpack_require__(75);
+var coreResolvables_1 = __webpack_require__(70);
+var redirectTo_1 = __webpack_require__(71);
+var onEnterExitRetain_1 = __webpack_require__(72);
+var resolve_1 = __webpack_require__(73);
+var views_1 = __webpack_require__(74);
+var updateGlobals_1 = __webpack_require__(75);
+var url_1 = __webpack_require__(76);
 var lazyLoad_1 = __webpack_require__(47);
 var transitionEventType_1 = __webpack_require__(48);
 var transitionHook_1 = __webpack_require__(12);
 var predicates_1 = __webpack_require__(1);
 var common_1 = __webpack_require__(0);
 var hof_1 = __webpack_require__(2);
-var ignoredTransition_1 = __webpack_require__(76);
-var invalidTransition_1 = __webpack_require__(77);
+var ignoredTransition_1 = __webpack_require__(77);
+var invalidTransition_1 = __webpack_require__(78);
 /**
  * The default [[Transition]] options.
  *
@@ -4892,10 +4892,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var angular_1 = __webpack_require__(10);
 var core_1 = __webpack_require__(4);
 var views_1 = __webpack_require__(30);
-var templateFactory_1 = __webpack_require__(85);
+var templateFactory_1 = __webpack_require__(86);
 var stateProvider_1 = __webpack_require__(56);
-var onEnterExitRetain_1 = __webpack_require__(86);
-var locationServices_1 = __webpack_require__(87);
+var onEnterExitRetain_1 = __webpack_require__(87);
+var locationServices_1 = __webpack_require__(88);
 var urlRouterProvider_1 = __webpack_require__(57);
 angular_1.ng.module("ui.router.angular1", []);
 var mod_init = angular_1.ng.module('ui.router.init', []);
@@ -8826,7 +8826,8 @@ function NewAthleteController($stateParams, $http, athletesService, $state) {
   vm.saveAthlete = function () {
     athletesService.saveAthlete(vm.athlete).then(function (res) {
       console.log(res);
-      $state.go("home");
+      // $state.go("welcome");
+      $state.go("showAthlete", { id: res.athlete.id });
     });
   };
 }
@@ -8863,39 +8864,66 @@ exports.default = AthletesController;
 /* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(62);
-__webpack_require__(93);
-__webpack_require__(58);
-__webpack_require__(95);
-__webpack_require__(59);
-__webpack_require__(97);
-__webpack_require__(60);
-module.exports = __webpack_require__(99);
+"use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// WelcomeController.$inject = ["welcomeService"];
+
+function WelcomeController() {
+  var vm = this;
+
+  activate();
+
+  function activate() {}
+}
+
+exports.default = WelcomeController;
 
 /***/ }),
 /* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(63);
+__webpack_require__(94);
+__webpack_require__(58);
+__webpack_require__(96);
+__webpack_require__(59);
+__webpack_require__(98);
+__webpack_require__(60);
+__webpack_require__(100);
+__webpack_require__(101);
+module.exports = __webpack_require__(61);
+
+
+/***/ }),
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var angular = __webpack_require__(15);
-__webpack_require__(64);
+__webpack_require__(65);
 
 angular.module('forTheLoveOfHisGame', ["ui.router"]).config(router);
 
 router.$inject = ["$stateProvider", "$urlRouterProvider"];
 
 function router($stateProvider, $urlRouterProvider) {
-  $stateProvider.state("home", {
+  $stateProvider.state("welcome", {
     url: "/",
+    template: "<welcome></welcome>"
+  }).state("athletes", {
+    url: "/athletes",
     template: "<athletes></athletes>"
-  }).state("athlete", {
-    url: "/athlete/:id",
+  }).state("showAthlete", {
+    url: "/athletes/:id",
     template: "<show-athlete></show-athlete>"
   }).state("newAthlete", {
-    url: "/athlete.new",
+    url: "/athletes/new",
     template: "<new-athlete></new-athlete>"
   });
 
@@ -8903,7 +8931,7 @@ function router($stateProvider, $urlRouterProvider) {
 }
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports) {
 
 /**
@@ -42739,7 +42767,7 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42759,16 +42787,16 @@ __export(__webpack_require__(29));
 __export(__webpack_require__(30));
 __export(__webpack_require__(56));
 __export(__webpack_require__(57));
-__webpack_require__(88);
 __webpack_require__(89);
 __webpack_require__(90);
 __webpack_require__(91);
 __webpack_require__(92);
+__webpack_require__(93);
 exports.default = "ui.router";
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42784,7 +42812,7 @@ __export(__webpack_require__(27));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42799,7 +42827,7 @@ __export(__webpack_require__(19));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42815,7 +42843,7 @@ __export(__webpack_require__(20));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42834,7 +42862,7 @@ __export(__webpack_require__(7));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42858,7 +42886,7 @@ exports.registerAddCoreResolvables = function (transitionService) {
 //# sourceMappingURL=coreResolvables.js.map
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42901,7 +42929,7 @@ exports.registerRedirectToHook = function (transitionService) {
 //# sourceMappingURL=redirectTo.js.map
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42964,7 +42992,7 @@ exports.registerOnEnterHook = function (transitionService) {
 //# sourceMappingURL=onEnterExitRetain.js.map
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43013,7 +43041,7 @@ exports.registerLazyResolveState = function (transitionService) {
 //# sourceMappingURL=resolve.js.map
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43066,7 +43094,7 @@ exports.registerActivateViews = function (transitionService) {
 //# sourceMappingURL=views.js.map
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43107,7 +43135,7 @@ exports.registerUpdateGlobalState = function (transitionService) {
 //# sourceMappingURL=updateGlobals.js.map
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43138,7 +43166,7 @@ exports.registerUpdateUrl = function (transitionService) {
 //# sourceMappingURL=url.js.map
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43175,7 +43203,7 @@ exports.registerIgnoredTransitionHook = function (transitionService) {
 //# sourceMappingURL=ignoredTransition.js.map
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43200,7 +43228,7 @@ exports.registerInvalidTransitionHook = function (transitionService) {
 //# sourceMappingURL=invalidTransition.js.map
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43234,7 +43262,7 @@ __export(__webpack_require__(28));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43251,7 +43279,7 @@ __export(__webpack_require__(46));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43264,7 +43292,7 @@ __export(__webpack_require__(44));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43278,11 +43306,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @module vanilla
  */
 /** */
-__export(__webpack_require__(82));
+__export(__webpack_require__(83));
 //# sourceMappingURL=vanilla.js.map
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43300,11 +43328,11 @@ __export(__webpack_require__(53));
 __export(__webpack_require__(54));
 __export(__webpack_require__(55));
 __export(__webpack_require__(14));
-__export(__webpack_require__(83));
+__export(__webpack_require__(84));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43339,7 +43367,7 @@ exports.memoryLocationPlugin = utils_1.locationPluginFactory("vanilla.memoryLoca
 //# sourceMappingURL=plugins.js.map
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43366,7 +43394,7 @@ exports.UIRouterPluginBase = UIRouterPluginBase;
 //# sourceMappingURL=interface.js.map
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43566,7 +43594,7 @@ var scopeBindings = function (bindingsObj) { return Object.keys(bindingsObj || {
 //# sourceMappingURL=templateFactory.js.map
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43597,7 +43625,7 @@ exports.getStateHookBuilder = function (hookName) {
 //# sourceMappingURL=onEnterExitRetain.js.map
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43678,7 +43706,7 @@ exports.Ng1LocationServices = Ng1LocationServices;
 //# sourceMappingURL=locationServices.js.map
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44052,7 +44080,7 @@ var $urlMatcherFactoryProvider;
 //# sourceMappingURL=injectables.js.map
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44629,7 +44657,7 @@ angular_1.ng.module('ui.router.state')
 //# sourceMappingURL=stateDirectives.js.map
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44681,7 +44709,7 @@ angular_1.ng.module('ui.router.state')
 //# sourceMappingURL=stateFilters.js.map
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44977,7 +45005,7 @@ angular_1.ng.module('ui.router.state').directive('uiView', $ViewDirectiveFill);
 //# sourceMappingURL=viewDirective.js.map
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45006,7 +45034,7 @@ angular_1.ng.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProv
 //# sourceMappingURL=viewScroll.js.map
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45016,7 +45044,7 @@ var _athletes = __webpack_require__(58);
 
 var _athletes2 = _interopRequireDefault(_athletes);
 
-var _athletes3 = __webpack_require__(94);
+var _athletes3 = __webpack_require__(95);
 
 var _athletes4 = _interopRequireDefault(_athletes3);
 
@@ -45030,13 +45058,13 @@ var athletesComponent = {
 angular.module("forTheLoveOfHisGame").component("athletes", athletesComponent);
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Athletes</h1>\n\n<div class=\"btn btn-large\" ui-sref=\"newAthlete\">+ New Athlete</div>\n<div class=\"athlete-container flex\">\n  <div class=\"athlete flex\" ng-repeat=\"athlete in $ctrl.athletes\" ui-sref\"athlete({id: athlete.id})\">\n    <!-- <img ng-src={{athlete.photo}}></img> -->\n    <div class=\"info\">\n      <h4>{{athlete.name}}</h4>\n      <div>{{athlete.school}}</div>\n      <div>{{athlete.jersey_number}}</div>\n      <div>{{athlete.position}}</div>\n      <div>{{athlete.class_of}}</div>\n      <div>{{athlete.team}}</div>\n    </div>\n  </div>\n</div>\n";
+module.exports = "<h1>Athletes</h1>\n\n<div class=\"btn btn-large\" ui-sref=\"newAthlete\">+ New Athlete</div>\n<div class=\"athlete-container flex\">\n  <div class=\"athlete flex\" ng-repeat=\"athlete in $ctrl.athletes\" ui-sref\"athlete({id: athlete.id})\">\n    <!-- <img ng-src={{athlete.photo}}></img> -->\n    <div class=\"info\">\n      <h4>Athlete Name: {{athlete.name}}</h4>\n      <div>School Name: {{athlete.school}}</div>\n      <div>Jersey Number: {{athlete.jeresey_number}}</div>\n      <div>Position: {{athlete.position}}</div>\n      <div>Class of: {{athlete.class_of}}</div>\n      <div>Team Name: {{athlete.team}}</div>\n    </div>\n  </div>\n</div> <br>\n\n\n";
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45046,7 +45074,7 @@ var _new = __webpack_require__(59);
 
 var _new2 = _interopRequireDefault(_new);
 
-var _new3 = __webpack_require__(96);
+var _new3 = __webpack_require__(97);
 
 var _new4 = _interopRequireDefault(_new3);
 
@@ -45060,13 +45088,13 @@ var newAthleteComponent = {
 angular.module("forTheLoveOfHisGame").component("newAthlete", newAthleteComponent);
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container\">\n  <h1>new athlete</h1>\n  <form ng-submit=\"$ctrl.saveAthlete()\">\n    <div class=\"form-group\">\n      <label for=\"name\">Athlete Name</label>\n      <input ng-model=\"$ctrl.athlete.name\" type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Enter name\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"school\">School Name</label>\n      <input ng-model=\"$ctrl.athlete.school\" type=\"text\" class=\"form-control\" id=\"school\" placeholder=\"Enter school\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"jeresey_number\">Jeresey #</label>\n      <input ng-model=\"$ctrl.athlete.jersey_number\" type=\"text\" class=\"form-control\" id=\"jeresey_number\" placeholder=\"Enter jersey number\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"Position\">Position</label>\n      <input ng-model=\"$ctrl.athlete.position\" type=\"text\" class=\"form-control\" id=\"position\" placeholder=\"Enter position\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"class_of\">Class of</label>\n      <input ng-model=\"$ctrl.athlete.class_of\" type=\"text\" class=\"form-control\" id=\"class_of\" placeholder=\"Enter class of\">\n    </div>\n    <div class=\"form-group\">\n      <label for=\"team\">Team</label>\n      <input ng-model=\"$ctrl.athlete.team\" type=\"text\" class=\"form-control\" id=\"team\" placeholder=\"Enter team\">\n    </div>\n    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n  </form>\n</div>\n";
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45076,7 +45104,7 @@ var _athlete = __webpack_require__(60);
 
 var _athlete2 = _interopRequireDefault(_athlete);
 
-var _athlete3 = __webpack_require__(98);
+var _athlete3 = __webpack_require__(99);
 
 var _athlete4 = _interopRequireDefault(_athlete3);
 
@@ -45090,13 +45118,13 @@ var athleteComponent = {
 angular.module("forTheLoveOfHisGame").component("showAthlete", athleteComponent);
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Individial Athlete</h1>\n";
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45116,13 +45144,13 @@ function athletesService($http) {
   };
 
   service.getAthlete = function (id) {
-    return $http.get("/athlete" + id).then(function (res) {
+    return $http.get("/athletes" + id).then(function (res) {
       return res.data;
     });
   };
 
   service.saveAthlete = function (newAthlete) {
-    return $http.post("/athlete", newAthlete).then(function (res) {
+    return $http.post("/athletes", newAthlete).then(function (res) {
       return res.data;
     });
   };
@@ -45131,6 +45159,36 @@ function athletesService($http) {
 }
 
 angular.module("forTheLoveOfHisGame").service("athletesService", athletesService);
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _welcome = __webpack_require__(61);
+
+var _welcome2 = _interopRequireDefault(_welcome);
+
+var _welcome3 = __webpack_require__(102);
+
+var _welcome4 = _interopRequireDefault(_welcome3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var welcomeComponent = {
+  controller: _welcome2.default,
+  template: _welcome4.default
+};
+
+angular.module("forTheLoveOfHisGame").component("welcome", welcomeComponent);
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"home-view-container\">\n    <div class=\"container\">\n        <div class=\"index-header\">\n            <h1 class=\"home-header\">For the love of his game</h1>\n            <img src=\"http://maxpreps.cbsistatic.com/includes/images/sport_icons/football.jpg\">\n            <p>Bringing the love of football with families around the world </p>\n            <p>\n                <a class=\"btn btn-primary btn-lg\" href=\"/athletes\"></a>\n            </p>\n        </div>\n    </div>\n</div>\n";
 
 /***/ })
 /******/ ]);
