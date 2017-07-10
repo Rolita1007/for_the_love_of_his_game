@@ -8844,16 +8844,19 @@ exports.default = NewAthleteController;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-AthletesController.$inject = ["athletesService"];
+AthletesController.$inject = ["athletesService", "$stateParams"];
 
-function AthletesController(athletesService) {
+function AthletesController(athletesService, $stateParams) {
   var vm = this;
+
+  vm.athlete = {};
 
   activate();
 
   function activate() {
     athletesService.getAthlete($stateParams.id).then(function (res) {
-      vm.athletes = res;
+      vm.athlete = res.athlete;
+      console.log(res.athlete);
     });
   }
 }
@@ -45121,7 +45124,7 @@ angular.module("forTheLoveOfHisGame").component("showAthlete", athleteComponent)
 /* 99 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Individial Athlete</h1>\n";
+module.exports = "<h1>Individual Athlete</h1>\n\n<ul>\n  <li>Name: {{ $ctrl.athlete.name }}</li>\n  <li>Jersey: {{ $ctrl.athlete.jersey_number }}</li>\n  <li>Position: {{ $ctrl.athlete.position }}</li>\n  <li>School: {{ $ctrl.athlete.school }}</li>\n  <li>Class: {{ $ctrl.athlete.class_of }}</li>\n  <li>Team: {{ $ctrl.athlete.team }}</li>\n</ul>\n";
 
 /***/ }),
 /* 100 */
@@ -45144,7 +45147,7 @@ function athletesService($http) {
   };
 
   service.getAthlete = function (id) {
-    return $http.get("/athletes" + id).then(function (res) {
+    return $http.get("/athletes/" + id).then(function (res) {
       return res.data;
     });
   };

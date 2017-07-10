@@ -12,7 +12,7 @@ function athletesService ($http) {
   };
 
   service.getAthlete = function (id) {
-    return $http.get("/athletes" + id).then(res => {
+    return $http.get("/athletes/" + id).then(res => {
       return res.data;
     });
   };

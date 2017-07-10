@@ -1,13 +1,16 @@
-AthletesController.$inject = ["athletesService"];
+AthletesController.$inject = ["athletesService", "$stateParams"];
 
-function AthletesController(athletesService) {
+function AthletesController(athletesService, $stateParams) {
   const vm = this;
+
+  vm.athlete = {};
 
   activate();
 
   function activate() {
     athletesService.getAthlete($stateParams.id).then(res => {
-      vm.athletes = res;
+      vm.athlete = res.athlete;
+      console.log(res.athlete);
     });
   }
 }
