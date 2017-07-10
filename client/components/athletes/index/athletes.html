@@ -2,7 +2,7 @@
 
 <div class="btn btn-large" ui-sref="newAthlete">+ New Athlete</div>
 <div class="athlete-container flex">
-  <div class="athlete flex" ng-repeat="athlete in $ctrl.athletes" ui-sref"athlete({id: athlete.id})">
+  <div class="athlete flex" ng-repeat="athlete in $ctrl.athletes" ui-sref="athlete({id: athlete.id})">
     <!-- <img ng-src={{athlete.photo}}></img> -->
     <div class="info">
       <h4>Athlete Name: {{athlete.name}}</h4>
@@ -13,6 +13,5 @@
       <div>Team Name: {{athlete.team}}</div>
     </div>
   </div>
-</div> <br>
-
+</div>
 

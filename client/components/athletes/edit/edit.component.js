@@ -7,4 +7,4 @@ const EditComponent = {
 };
 
 angular.module("forTheLoveOfHisGame")
-       .component("edit", editComponent);
+       .component("edit", EditComponent);
