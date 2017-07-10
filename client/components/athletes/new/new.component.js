@@ -7,4 +7,4 @@ const newAthleteComponent = {
 }
 
 angular.module("forTheLoveOfHisGame")
-       .component("forTheLoveOfHisGameNewAthlete", newAthleteComponent);
+       .component("newAthlete", newAthleteComponent);

@@ -6,7 +6,7 @@ function AthletesController(athletesService) {
   activate();
 
   function activate() {
-    athleteService.getAthlete($stateParams.id).then(res => {
+    athletesService.getAthlete($stateParams.id).then(res => {
       vm.athletes = res;
     });
   }

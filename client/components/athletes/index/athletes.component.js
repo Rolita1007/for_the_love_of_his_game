@@ -3,8 +3,8 @@ import AthletesTemplate from "./athletes.html";
 
 const athletesComponent = {
   controller: AthletesController,
-  template: athletesTemplate
+  template: AthletesTemplate
 };
 
 angular.module("forTheLoveOfHisGame")
-       .component("forTheLoveOfHisGameAthletes", athleteComponent);
+       .component("athletes", athletesComponent);

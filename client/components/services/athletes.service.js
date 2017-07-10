@@ -1,12 +1,12 @@
 const angular = require("angular");
 
-athleteService.$inject = ["http"];
+athletesService.$inject = ["$http"];
 
-function athleteService ($http) {
+function athletesService ($http) {
   const service = this;
 
   service.getAllAthletes = function () {
-    return $http.get("/athlete").then(res => {
+    return $http.get("/athletes").then(res => {
       return res.data;
     });
   };
@@ -28,4 +28,4 @@ function athleteService ($http) {
 }
 
 angular.module("forTheLoveOfHisGame")
-       .service("athleteService", athletesService);
+       .service("athletesService", athletesService);

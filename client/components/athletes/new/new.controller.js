@@ -1,15 +1,15 @@
-NewAthleteController.$inject = ["$stateParams", "http", "athletesService", "$State"];
+NewAthleteController.$inject = ["$stateParams", "$http", "athletesService", "$state"];
 
 function NewAthleteController($stateParams, $http, athletesService, $state) {
   var vm = this;
-  vm.athlete = ();
+  vm.athlete = {};
 
   vm.saveAthlete = function () {
-    athletesService.saveAthlete(vm.athlete).then(res) => {
+    athletesService.saveAthlete(vm.athlete)
+    .then(function(res) {
       console.log(res);
-
-  $state.go("home");
-    };
+      $state.go("home");
+    });
 
   };
 }

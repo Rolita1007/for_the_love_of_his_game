@@ -1,5 +1,5 @@
 import AthleteController from "./athlete.controller";
-import athleteTemplate from "./athlere.html";
+import athleteTemplate from "./athlete.html";
 
 const athleteComponent = {
   controller: AthleteController,
@@ -7,4 +7,4 @@ const athleteComponent = {
 };
 
 angular.module("forTheLoveOfHisGame")
-       .component("forTheLoveOfHisGameAthletes", athleteComponent);
+       .component("showAthlete", athleteComponent);
