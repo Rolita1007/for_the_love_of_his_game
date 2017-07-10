@@ -31,7 +31,10 @@ def update
   @athlete = Athlete.find(params[:id])
 
   if @athlete.update(athlete_params)
-     redirect_to athlete_path(@athlete)
+     # redirect_to athlete_path(@athlete)
+     render json: {
+        athlete: @athlete
+     }
   else
     render status: 500,
            json: {

@@ -23,6 +23,13 @@ function athletesService ($http) {
     });
   };
 
+  service.updateAthlete = function(athlete) {
+    return $http.patch("/athletes/" + athlete.id, athlete)
+            .then(res => {
+              return res.data;
+            });
+  }
+
   return service;
 
 }
