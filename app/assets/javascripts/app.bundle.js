@@ -45124,7 +45124,7 @@ angular.module("forTheLoveOfHisGame").component("showAthlete", athleteComponent)
 /* 99 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Individual Athlete</h1>\n\n<ul>\n  <li>Name: {{ $ctrl.athlete.name }}</li>\n  <li>Jersey: {{ $ctrl.athlete.jersey_number }}</li>\n  <li>Position: {{ $ctrl.athlete.position }}</li>\n  <li>School: {{ $ctrl.athlete.school }}</li>\n  <li>Class: {{ $ctrl.athlete.class_of }}</li>\n  <li>Team: {{ $ctrl.athlete.team }}</li>\n</ul>\n";
+module.exports = "<h1>Individual Athlete</h1>\n\n<ul>\n  <li>Name: {{ $ctrl.athlete.name }}</li>\n  <li>Jersey Number: {{ $ctrl.athlete.jersey_number }}</li>\n  <li>Position: {{ $ctrl.athlete.position }}</li>\n  <li>School: {{ $ctrl.athlete.school }}</li>\n  <li>Class Of: {{ $ctrl.athlete.class_of }}</li>\n  <li>Team: {{ $ctrl.athlete.team }}</li>\n</ul>\n\n<button>Update</button>\n";
 
 /***/ }),
 /* 100 */
