@@ -1,9 +1,10 @@
-import athletesController from "./athletes.controller";
-import atheletesController from "./athletes.html";
+import AthletesController from "./athletes.controller";
+import AthletesTemplate from "./athletes.html";
 
 const athletesComponent = {
-  controller: athletesController,
+  controller: AthletesController,
   template: athletesTemplate
 };
 
-angular.module("for_the_love_of_his_game").component("for_the_love_of_his_game_athletes", athleteComponent);
+angular.module("forTheLoveOfHisGame")
+       .component("forTheLoveOfHisGameAthletes", athleteComponent);

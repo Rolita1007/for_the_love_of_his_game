@@ -6,35 +6,57 @@ def index
 end
 
 def create
-  @athlete = Athlete.create!(athlete_params)
-  redirect_to athlete_path(@athlete)
+  @athlete = Athlete.new(athlete_params)
+
+  if @athlete.save
+    redirect_to athlete_path(@athlete)
+  else
+    render status: 500,
+           json: {
+            error: @athlete.errors
+           }
+  end
 end
 
 def show
-  @athlete = Athlete.find(params{:id})
-  render json: @athlete
+  @athlete = Athlete.find(params[:id])
+  render json: {
+         athlete: @athlete
+  }
 end
 
 def update
-  @athlete = Athletes.find(params{:id})
-  @athlete.update!(athlete_params)
-  redirect_to athlete_path(@athlete)
+  @athlete = Athlete.find(params[:id])
+
+  if @athlete.update(athlete_params)
+     redirect_to athlete_path(@athlete)
+  else
+    render status: 500,
+           json: {
+            error: @athlete.errors
+           }
+  end
 end
 
 def delete
-  @athlete = Athlete.find(params[:id])
-  @artist.delete
-  redirect_to athlete_path
+  @athletes = Athlete.find(params[:id])
+
+  if @athletes.delete
+     redirect_to athlete_path, :method => :get
+  else
+    render status: 500,
+           json: {
+            error: "Could not delete Athlete"
+           }
+  end
 end
 
-private
+  private
 
-def athlete_params
-  params.require(:athlete)
-  .permit(:name, :school, :jersey_number, :position, :class_of, :team)
-
-end
-
+  def athlete_params
+    params.require(:athlete)
+    .permit(:name, :school, :jersey_number, :position, :class_of, :team)
+  end
 end
 
 
