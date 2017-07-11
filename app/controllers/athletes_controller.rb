@@ -43,11 +43,13 @@ def update
   end
 end
 
-def delete
+def destroy
   @athletes = Athlete.find(params[:id])
 
   if @athletes.delete
-     redirect_to athlete_path, :method => :get
+     render json: {
+      message: "Deleted Athlete"
+     }
   else
     render status: 500,
            json: {
