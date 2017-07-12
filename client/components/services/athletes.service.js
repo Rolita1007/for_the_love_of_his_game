@@ -29,6 +29,13 @@ function athletesService ($http) {
               return res.data;
             });
   }
+  service.deleteAthlete = function(id) {
+    console.log("deleteAthleteservice");
+    return $http.delete("/athletes/" + id)
+                .then(res => {
+                  return res
+                });
+  }
 
   return service;
 
