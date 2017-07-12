@@ -7,4 +7,4 @@ const FamiliesComponent = {
 };
 
 angular.module("forTheLoveOfHisGame")
-       .component("families", familiesComponent);
+       .component("families", FamiliesComponent);

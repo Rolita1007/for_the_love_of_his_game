@@ -25,6 +25,13 @@
       <label for="team">Team</label>
       <input ng-model="$ctrl.athlete.team" type="text" class="form-control" id="team" placeholder="Enter team">
     </div>
+    <label>Family:
+      <select ng-model="$ctrl.athlete.family_id">
+        <option value="{{family.id}}" ng-repeat="family in $ctrl.families">{{family.name}}</option>
+      </select>
+    </label>
+    <br>
     <button type="submit" class="btn btn-primary">Submit</button>
+    <!-- <button ui-sref="editAthlete({id: $ctrl.athlete.id})">Update</button> -->
   </form>
 </div>

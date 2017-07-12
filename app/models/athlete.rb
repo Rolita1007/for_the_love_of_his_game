@@ -1,3 +1,3 @@
 class Athlete < ApplicationRecord
-belongs_to :family
+  has_one :family
 end

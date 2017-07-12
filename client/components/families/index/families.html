@@ -1,9 +1,8 @@
-<h1>Athletes</h1>
+<h1>Families</h1>
 
 <div class="btn btn-large" ui-sref="newFamily">+ New Family</div>
 <div class="family-container flex">
   <div class="family flex" ng-repeat="family in $ctrl.families">
-    <!-- <img ng-src={{athlete.photo}}></img> -->
     <div class="info">
       <h4 ui-sref="showFamily({id: family.id})">Family Name: {{family.name}}</h4>
       <div>Relationship: {{family.relationship}}</div>
@@ -12,4 +11,5 @@
     </div>
   </div>
 </div>
+
 

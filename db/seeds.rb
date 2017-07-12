@@ -6,8 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Athlete.create({name: "Jay", school: "WJMS", jersey_number: 3, position: "Saftey", class_of: 2022, team: "Panthers"})
-Athlete.create({name: "Odell", school: "Jackson High School", jersey_number: 13, position: "Wide Receiver", class_of: 2022, team: "Giants"})
+Family.delete_all
+Athlete.delete_all
 
-Family.create({name: "Ford", relationship: "Mother", school: "WJMS", team: "Panthers"})
-Family.create({name: "Ounce", relationship: "Father", school: "Gwinnett High School", team: "Cougars"})
+family1 = Family.create({name: "Ford", relationship: "Mother", school: "WJMS", team: "Panthers"})
+family2 = Family.create({name: "Ounce", relationship: "Father", school: "Gwinnett High School", team: "Cougars"})
+
+Athlete.create({family_id: family1.id, name: "Jay", school: "WJMS", jersey_number: 3, position: "Saftey", class_of: 2022, team: "Panthers"})
+Athlete.create({family_id: family1.id, name: "Odell", school: "Jackson High School", jersey_number: 13, position: "Wide Receiver", class_of: 2022, team: "Giants"})
+

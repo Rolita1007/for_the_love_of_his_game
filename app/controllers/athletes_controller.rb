@@ -62,7 +62,7 @@ end
 
   def athlete_params
     params.require(:athlete)
-          .permit(:name, :school, :jersey_number, :position, :class_of, :team)
+          .permit(:name, :school, :jersey_number, :position, :class_of, :team, :family_id)
   end
 end
 

@@ -1,14 +1,13 @@
 class FamiliesController < ApplicationController
 
   def index
-    @athlete = Athlete.find(params[:athlete_id])
-    @families = @athlete.families
+    @families = Family.all
     render json: @families
   end
 
   def create
-    @family = Family.new(family_params)
     @athlete = Athlete.find(params[:athlete_id])
+    @family = @athlete.family.new(family_params)
       if @family.save
         render json: {
         athlete: @athlete
@@ -24,13 +23,13 @@ class FamiliesController < ApplicationController
   def show
     @family = Family.find(params[:id])
       render json: {
-        "family": @family
+        family: @family
       }
   end
 
   def update
-    @family = Family.find(params[:id])
     @athlete = Athlete.find(params[:athlete_id])
+    @family = Family.find(params[:id])
       if @family.update(family_params)
         render json: {
           family: @family
@@ -44,8 +43,8 @@ class FamiliesController < ApplicationController
   end
 
   def destroy
-    @family = Family.find(params[:id])
     @athlete = @familiy.athlete
+    @family = Family.find(params[:id])
     if @family.delete
      render json: {
       message: "Deleted Family"

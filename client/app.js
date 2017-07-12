@@ -26,6 +26,10 @@ function router ($stateProvider, $urlRouterProvider) {
     .state("editAthlete", {
       url: "/athletes/:id/edit",
       template: "<edit-athlete></edit-athlete>"
+    })
+    .state("families", {
+      url: "/families",
+      template: "<families></families>"
     });
 
   $urlRouterProvider.otherwise("/");

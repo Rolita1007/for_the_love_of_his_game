@@ -1,10 +1,19 @@
-NewAthleteController.$inject = ["$stateParams", "$http", "athletesService", "$state"];
+NewAthleteController.$inject = ["$stateParams", "$http", "athletesService", "$state", "familiesService"];
 
-function NewAthleteController($stateParams, $http, athletesService, $state) {
+function NewAthleteController($stateParams, $http, athletesService, $state, familiesService) {
   var vm = this;
   vm.athlete = {};
+  vm.saveAthlete = saveAthlete;
+  vm.getFamilies = getFamilies;
+  vm.families = [];
 
-  vm.saveAthlete = function () {
+  activate();
+
+  function activate() {
+    getFamilies();
+  }
+
+  function saveAthlete() {
     athletesService.saveAthlete(vm.athlete)
     .then(function(res) {
       console.log(res);
@@ -13,6 +22,14 @@ function NewAthleteController($stateParams, $http, athletesService, $state) {
     });
 
   };
+
+  function getFamilies() {
+    familiesService.getAllFamilies()
+    .then(res => {
+      console.log(res);
+      vm.families = res;
+    });
+  }
 }
 
 export default NewAthleteController;
