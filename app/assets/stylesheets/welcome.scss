@@ -2,8 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-img {
- max-width:100%;
- max-height:100%;
 
+#home-view-container {
+    background-image: url('http://i.imgur.com/0DOMP4b.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 5px);
+    width: 100vw;
+}
+
+.home-header {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 7em;
+    margin: 0;
+}
+
+.index-header {
+    color: #FCFCFC;
+    font-size: 20px;
+    line-height: 8em;
+    text-align: center;
+}
+
+span {
+  color: red;
+}
+
+.container {
+    margin: 0 5em;
+    padding: 3em;
+}
+
+button {
+  margin-bottom: 10em;
 }
