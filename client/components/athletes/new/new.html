@@ -1,5 +1,10 @@
+<div class="jumbotron-new">
+  <div>
+    <div><h1 class="new-athlete">For the <span>love</span> of his game</h1></div>
+  </div>
+</div>
 <div class="container">
-  <h1>New Athlete</h1>
+  <div class="new-athlete"><h1>New Athlete</h1></div>
   <form ng-submit="$ctrl.saveAthlete()">
     <div class="form-group">
       <label for="name">Athlete Name:</label>
@@ -25,13 +30,15 @@
       <label for="team">Team:</label>
       <input ng-model="$ctrl.athlete.team" type="text" class="form-control" id="team" placeholder="Enter team">
     </div>
-    <label>Family:
-      <select ng-model="$ctrl.athlete.family_id">
-        <option value="{{family.id}}" ng-repeat="family in $ctrl.families">{{family.name}}</option>
-      </select>
-    </label>
-    <br>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <!-- <button ui-sref="editAthlete({id: $ctrl.athlete.id})">Update</button> -->
+    <div>
+      <label class="new-family">Family: <br>
+        <select ng-model="$ctrl.athlete.family_id">
+          <option value="{{family.id}}" ng-repeat="family in $ctrl.families">{{family.name}}</option>
+        </select>
+      </label>
+    </div>
+    <div>
+      <button class="new-button" type="submit">Submit</button>
+    </div>
   </form>
 </div>
