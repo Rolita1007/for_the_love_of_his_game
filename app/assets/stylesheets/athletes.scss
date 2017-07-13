@@ -2,16 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .jumbotron {
   background-repeat: no-repeat;
-  background-image: url('https://images.fineartamerica.com/images-medium-large-5/50-yard-line-on-football-field-paul-velgos.jpg');
-  background: cover;
-  height: 350px;
-}
+  background-image: url('http://i.imgur.com/KrpHPSF.png');
+  background-size: cover;
+  margin-bottom: 70px;
+  padding-left: 10px;
+  padding-bottom: 80px;
+  font-family: 'Rakkas', cursive;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 40px;
 
-.index-athlete {
-  color: white;
-  padding: 35px;
 }
 
 .btn-large {
