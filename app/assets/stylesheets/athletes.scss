@@ -2,16 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .jumbotron {
   background-repeat: no-repeat;
-  background-image: url('https://images.fineartamerica.com/images-medium-large-5/50-yard-line-on-football-field-paul-velgos.jpg');
-  background: cover;
-  height: 350px;
-}
-
-.index-athlete {
-  color: white;
-  padding: 35px;
+  background-image: url('http://i.imgur.com/KrpHPSF.png');
+  background-size: cover;
+  margin-bottom: 70px;
+  padding-left: 10px;
+  padding-bottom: 80px;
+  font-family: 'Rakkas', cursive;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 40px;
 }
 
 .btn-large {
@@ -22,7 +23,20 @@
 }
 
 .info {
-  background-color: beige;
+  background-color: Beige;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+h4 {
+
+}
+
+button {
+  margin-bottom: 20px;
+  margin-top: 15px;
+  width: 100px;
+  background-color: red;
 }
 
 .edit-container{
@@ -36,12 +50,4 @@
   margin-bottom: 10px;
 }
 
-.edit-form {
-  max-width: 500px;
-  padding: 10px 20px;
-  margin: 10px auto;
-  padding: 20px;
-  background: #f4f7f8;
-  border-radius: 8px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-}
+
