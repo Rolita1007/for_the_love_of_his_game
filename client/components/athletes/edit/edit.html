@@ -1,5 +1,11 @@
+<div class="jumbotron-edit">
+  <div>
+    <div><h1 class="new-athlete">For the <span>love</span> of his game</h1></div>
+  </div>
+</div>
+
 <div class="edit-container">
-  <h1>Edit athlete</h1>
+  <h1 class="edit-athlete">Edit athlete</h1>
   <div class="edit-form">
     <form ng-submit="$ctrl.updateAthlete()">
       <div class="form-group">
@@ -26,7 +32,7 @@
         <label for="team">Team:</label>
         <input ng-model="$ctrl.athlete.team" type="text" class="form-control" id="team" placeholder="Enter team">
       </div>
-      <button type="submit" class="btn btn-primary" ui-sref="editAthletes">Submit</button>
+      <button type="submit" class="edit-submit-button" ui-sref="editAthletes">Submit</button>
     </form>
   </div>
 </div>
