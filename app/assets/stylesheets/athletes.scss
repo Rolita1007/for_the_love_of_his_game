@@ -13,7 +13,6 @@
   font-family: 'Rakkas', cursive;
   color: rgba(0, 0, 0, 0.6);
   font-size: 40px;
-
 }
 
 .btn-large {
@@ -24,7 +23,20 @@
 }
 
 .info {
-  background-color: beige;
+  background-color: Beige;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+h4 {
+
+}
+
+button {
+  margin-bottom: 20px;
+  margin-top: 15px;
+  width: 100px;
+  background-color: red;
 }
 
 .edit-container{
@@ -38,12 +50,4 @@
   margin-bottom: 10px;
 }
 
-.edit-form {
-  max-width: 500px;
-  padding: 10px 20px;
-  margin: 10px auto;
-  padding: 20px;
-  background: #f4f7f8;
-  border-radius: 8px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-}
+
