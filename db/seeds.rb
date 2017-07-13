@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Family.delete_all
 Athlete.delete_all
+Family.delete_all
+
 
 family1 = Family.create({name: "Ford", relationship: "Mother", school: "WJMS", team: "Panthers"})
 family2 = Family.create({name: "Ounce", relationship: "Father", school: "Gwinnett High School", team: "Cougars"})
