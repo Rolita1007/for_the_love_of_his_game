@@ -6,9 +6,9 @@
     background-image: url('http://i.imgur.com/0DOMP4b.jpg');
     font-family: 'Rakkas', cursive;
     background-size: cover;
-    background-repeat: no-repeat;
-      height: calc(100vh - 1px);
-      width: 100vw;
+    margin: 0;
+    height: 100%;
+
 }
 
 .home-header {
@@ -19,7 +19,7 @@
 
 .index-header {
     font-size: 20px;
-    line-height: 8em;
+    line-height: 11em;
     text-align: center;
 }
 
@@ -27,16 +27,11 @@ span {
   color: red;
 }
 
-.container {
-    height: 100%;
-}
-
 p {
   color: black;
-  margin: 0;
 }
 
-button {
+.home-button {
   width: 20em;
   height: 30px;
   border-radius: 20%;

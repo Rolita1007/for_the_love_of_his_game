@@ -1,30 +1,32 @@
-<div class="container">
+<div class="edit-container">
   <h1>Edit athlete</h1>
-  <form ng-submit="$ctrl.updateAthlete()">
-    <div class="form-group">
-      <label for="name">Athlete Name</label>
-      <input ng-model="$ctrl.athlete.name" type="text" class="form-control" id="name" placeholder="Enter name">
-    </div>
-    <div class="form-group">
-      <label for="school">School Name</label>
-      <input ng-model="$ctrl.athlete.school" type="text" class="form-control" id="school" placeholder="Enter school">
-    </div>
-    <div class="form-group">
-      <label for="jeresey_number">Jeresey #</label>
-      <input ng-model="$ctrl.athlete.jersey_number" type="text" class="form-control" id="jeresey_number" placeholder="Enter jersey number">
-    </div>
-    <div class="form-group">
-      <label for="Position">Position</label>
-      <input ng-model="$ctrl.athlete.position" type="text" class="form-control" id="position" placeholder="Enter position">
-    </div>
-    <div class="form-group">
-      <label for="class_of">Class of</label>
-      <input ng-model="$ctrl.athlete.class_of" type="text" class="form-control" id="class_of" placeholder="Enter class of">
-    </div>
-    <div class="form-group">
-      <label for="team">Team</label>
-      <input ng-model="$ctrl.athlete.team" type="text" class="form-control" id="team" placeholder="Enter team">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  <div class="edit-form"
+    <form ng-submit="$ctrl.updateAthlete()">
+      <div class="form-group">
+        <label for="name">Athlete Name:</label>
+        <input ng-model="$ctrl.athlete.name" type="text" class="form-control" id="name" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <label for="school">School Name:</label>
+        <input ng-model="$ctrl.athlete.school" type="text" class="form-control" id="school" placeholder="Enter school">
+      </div>
+      <div class="form-group">
+        <label for="jeresey_number">Jeresey #</label>
+        <input ng-model="$ctrl.athlete.jersey_number" type="text" class="form-control" id="jeresey_number" placeholder="Enter jersey number">
+      </div>
+      <div class="form-group">
+        <label for="Position">Position:</label>
+        <input ng-model="$ctrl.athlete.position" type="text" class="form-control" id="position" placeholder="Enter position">
+      </div>
+      <div class="form-group">
+        <label for="class_of">Class of:</label>
+        <input ng-model="$ctrl.athlete.class_of" type="text" class="form-control" id="class_of" placeholder="Enter class of">
+      </div>
+      <div class="form-group">
+        <label for="team">Team:</label>
+        <input ng-model="$ctrl.athlete.team" type="text" class="form-control" id="team" placeholder="Enter team">
+      </div>
+      <button type="submit" class="btn btn-primary" ui-sref="editAthletes">Submit</button>
+    </form>
+  </div>
 </div>

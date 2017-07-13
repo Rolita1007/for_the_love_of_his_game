@@ -1,3 +1,47 @@
 // Place all the styles related to the athletes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron {
+  background-repeat: no-repeat;
+  background-image: url('https://images.fineartamerica.com/images-medium-large-5/50-yard-line-on-football-field-paul-velgos.jpg');
+  background: cover;
+  height: 350px;
+}
+
+.index-athlete {
+  color: white;
+  padding: 35px;
+}
+
+.btn-large {
+  color: white;
+  font-size: 25px;
+  margin-top: 120px;
+  padding: 5px;
+}
+
+.info {
+  background-color: beige;
+}
+
+.edit-container{
+  height: 100vh;
+  margin: 0;
+  background-color: green;
+}
+
+.form-group {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.edit-form {
+  max-width: 500px;
+  padding: 10px 20px;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
