@@ -125,5 +125,46 @@ select {
   background-color: red;
   font-size: 20px;
   font-family: 'Rakkas', cursive;
+}
 
+.jumbotron-family {
+  background-repeat: no-repeat;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwphxyD4NuSV0hlPgqaouR088hLSHueKWp1QqbLIXYuB-nt6Hi2w');
+  background-size: cover;
+  font-family: 'Rakkas', cursive;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 40px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  height: 440px;
+}
+
+.family-buttons {
+  display: flex;
+  justify-content: row;
+  position: absolute;
+  justify-content: space-between;
+}
+
+.family-update-button {
+  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-left: 480px;
+  width: 150px;
+  height: 50px;
+  background-color: red;
+  font-size: 20px;
+  font-family: 'Rakkas', cursive;
+}
+
+.family-delete-button {
+  margin-bottom: 20px;
+  margin-top: 15px;
+
+  width: 150px;
+  height: 50px;
+  background-color: red;
+  font-size: 20px;
+  font-family: 'Rakkas', cursive;
+  margin-left: 170px;
 }

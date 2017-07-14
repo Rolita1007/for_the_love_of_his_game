@@ -1,11 +1,40 @@
-<h1>Individual Family</h1>
+<!-- <h1>My Family</h1>
 
 <ul>
   <li>Name: {{ $ctrl.athlete.name }}</li>
-  <li>Relationship: {{ $ctrl.athlete.relationship }}</li>
+  <li>Relationship: {{ $ctrl.family.relationship }}</li>
   <li>School: {{ $ctrl.athlete.school }}</li>
   <li>Team: {{ $ctrl.athlete.team }}</li>
-</ul>
+</ul> -->
 
-<button ui-sref="editAthlete({id: $ctrl.athlete.id})">Update</button>
-<button ng-click="$ctrl.deleteAthlete($ctrl.athlete.id)">Delete</button>
+
+<div class="jumbotron-family">
+  <div>
+    <div><h1 class="new-athlete">For the <span>love</span> of his game</h1></div>
+  </div>
+</div>
+<div class="container">
+  <div class="new-athlete"><h1>My Family</h1></div>
+  <form ng-submit="$ctrl.saveAthlete()">
+    <div class="form-group">
+      <label for="name">Athlete Name:</label>
+      <input ng-model="$ctrl.athlete.name" type="text" class="form-control" id="name" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="school">School Name:</label>
+      <input ng-model="$ctrl.athlete.school" type="text" class="form-control" id="school" placeholder="Enter school">
+    </div>
+    <div class="form-group">
+      <label for="team">Team Name:</label>
+      <input ng-model="$ctrl.family.team" type="text" class="form-control" id="team" placeholder="Enter team name">
+    </div>
+    <div class="form-group">
+      <label for="Position">Relationship:</label>
+      <input ng-model="$ctrl.family.relationship" type="text" class="form-control" id="relationship" placeholder="Enter relationship">
+    </div>
+    <div class="family-buttons">
+      <button class="family-update-button" ui-sref="editAthlete({id: $ctrl.athlete.id})">Update</button>
+      <button class="family-delete-button" ng-click="$ctrl.deleteAthlete($ctrl.athlete.id)">Delete</button>
+    </div>
+  </form>
+</div>
