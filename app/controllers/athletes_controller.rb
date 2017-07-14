@@ -22,8 +22,10 @@ end
 
 def show
   @athlete = Athlete.find(params[:id])
+  @family = @athlete.family
   render json: {
-         athlete: @athlete
+         athlete: @athlete,
+         family: @family
          }
 end
 
