@@ -7,8 +7,8 @@
 Check out the application on [Heroku](https://peaceful-eyrie-66276.herokuapp.com/)
 
 # This application was built using:
-*AngularJS
-*Rails 5
+* AngularJS
+* Rails 5
 
 
 # This is my wireframe for the application:
