@@ -17,8 +17,7 @@ function NewAthleteController($stateParams, $http, athletesService, $state, fami
     athletesService.saveAthlete(vm.athlete)
     .then(function(res) {
       console.log(res);
-      // $state.go("welcome");
-      $state.go("showAthlete", {id: res.athlete.id})
+      $state.go("athletes")
     });
 
   };
