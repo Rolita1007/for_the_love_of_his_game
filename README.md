@@ -1,24 +1,5 @@
-# README
+# For the love of his game
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## We love our children and they love football. What better way than to unite families together to help kids with the fundamentals of football, from tackling techniques, to how to lift weights and 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###
