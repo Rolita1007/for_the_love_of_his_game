@@ -6,6 +6,11 @@
 
 Check out the application on [Heroku](https://peaceful-eyrie-66276.herokuapp.com/)
 
+# This application was built using:
+*AngularJS
+*Rails 5
+
 
 
 <img width="1290" alt="screen shot 2017-07-14 at 12 52 13 pm" src="https://user-images.githubusercontent.com/22422858/28221959-66723724-6893-11e7-9ddc-bdc9be227f66.png">
+
