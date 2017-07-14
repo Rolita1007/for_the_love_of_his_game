@@ -10,7 +10,7 @@ Check out the application on [Heroku](https://peaceful-eyrie-66276.herokuapp.com
 * AngularJS
 * Rails 5
 
-#This is my [Trello](https://trello.com/b/emepgDgH/tackle-fun)
+# This is my [Trello](https://trello.com/b/emepgDgH/tackle-fun)
 
 # This is my wireframe for the application:
 
